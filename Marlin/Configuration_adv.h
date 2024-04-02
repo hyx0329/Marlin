@@ -910,7 +910,7 @@
 
   // Safety: The probe needs time to recognize the command.
   //         Minimum command delay (ms). Enable and increase if needed.
-  //#define BLTOUCH_DELAY 500
+  #define BLTOUCH_DELAY 200
 
   /**
    * Settings for BLTOUCH Classic 1.2, 1.3 or BLTouch Smart 1.0, 2.0, 2.2, 3.0, 3.1, and most clones:
@@ -1527,7 +1527,7 @@
    *
    * :['SPI_HALF_SPEED', 'SPI_QUARTER_SPEED', 'SPI_EIGHTH_SPEED']
    */
-  //#define SD_SPI_SPEED SPI_HALF_SPEED
+  #define SD_SPI_SPEED SPI_QUARTER_SPEED
 
   // The standard SD detect circuit reads LOW when media is inserted and HIGH when empty.
   // Enable this option and set to HIGH if your SD cards are incorrectly detected.
