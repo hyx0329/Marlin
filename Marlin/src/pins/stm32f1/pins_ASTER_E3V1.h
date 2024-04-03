@@ -51,6 +51,7 @@
 // L1/LT1 uses 2 different configurations for difference in BLTouch feature
 #if ENABLED(BLTOUCH)
   // Here the BLTouch is also used for Z min probe
+  // So USE_PROBE_FOR_Z_HOMING must be defined
   #define Z_MIN_PIN         PB10
   #define Z_MIN_PROBE_PIN   PB10
   #define SERVO0_PIN        PB2   // BLTouch
@@ -145,18 +146,21 @@
 //
 
 #define ONBOARD_SD_CS_PIN   PB12
+#define SDSS                ONBOARD_SD_CS_PIN
 
 //EXP2
 #define ENABLE_SPI2
 #define FORCE_SOFT_SPI
 
-#define MISO_PIN           PB14
-#define SCK_PIN            PB13
-#define BTN_EN2            PA4
-#define SS_PIN               PB12
-#define BTN_EN1            PA5
-#define MOSI_PIN           PB15
+// Onboard SD Card
+#define SD_MISO_PIN        PB14
+#define SD_SS_PIN          PB12
+#define SD_SCK_PIN         PB13
+#define SD_MOSI_PIN        PB15
 #define SD_DETECT_PIN      PB11
+
+#define BTN_EN1            PA5
+#define BTN_EN2            PA4
 #define KILL_PIN           -1
 
 //EXP1
