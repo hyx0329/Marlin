@@ -49,14 +49,20 @@
 #endif
 
 // L1/LT1 uses 2 different configurations for difference in BLTouch feature
-// but here we keep only the one with BLTouch enabled
-#define Z_MIN_PIN   PB10
-#define Z_MIN_PROBE_PIN   PB10
-#define SERVO0_PIN        PB2   // BLTouch
+#if ENABLED(BLTOUCH)
+  // Here the BLTouch is also used for Z min probe
+  #define Z_MIN_PIN         PB10
+  #define Z_MIN_PROBE_PIN   PB10
+  #define SERVO0_PIN        PB2   // BLTouch
 
-// This one is actually the one for switch at Z_MIN_PIN
-// But we have BLTouch
-#define CHDK_PIN    PC0
+  // This one is actually the one for switch at Z_MIN_PIN
+  // But we have BLTouch
+  #define CHDK_PIN          PC0
+#else
+  #define Z_MIN_PIN         PC0
+  #define CHDK_PIN          PB10
+  #define Z_MIN_PROBE_PIN   PC0
+#endif
 
 //
 // Limit Switches
@@ -126,7 +132,7 @@
 //
 #define HEATER_0_PIN       PB9
 #define HEATER_BED_PIN     PB8
-#define FAN_PIN            PC13
+#define FAN0_PIN            PC13
 
 //
 // Temperature Sensors
@@ -154,14 +160,14 @@
 #define KILL_PIN           -1
 
 //EXP1
-#define BEEPER_PIN         PA0
-#define BTN_ENC            PA1
-#define LCD_PINS_ENABLE    PB1
-#define LCD_PINS_RS        PB0
-#define LCD_PINS_D4        PA6
-#define LCD_PINS_D5        -1	//PA7
-#define LCD_PINS_D6        -1	//PC4
-#define LCD_PINS_D7        -1	//PC5
+#define BEEPER_PIN          PA0
+#define BTN_ENC             PA1
+#define LCD_PINS_EN         PB1
+#define LCD_PINS_RS         PB0
+#define LCD_PINS_D4         PA6
+#define LCD_PINS_D5         -1	//PA7
+#define LCD_PINS_D6         -1	//PC4
+#define LCD_PINS_D7         -1	//PC5
 
 #define DOGLCD_CS                PB1
 #define DOGLCD_A0                PB0
