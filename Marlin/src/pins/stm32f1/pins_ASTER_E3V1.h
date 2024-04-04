@@ -85,11 +85,11 @@
 
 #define Y_STEP_PIN         PD2
 #define Y_DIR_PIN          PC10
-#define Y_ENABLE_PIN       PA12
+#define Y_ENABLE_PIN       X_ENABLE_PIN
 
 #define E0_STEP_PIN        PC7
 #define E0_DIR_PIN         PC6
-#define E0_ENABLE_PIN      PA12
+#define E0_ENABLE_PIN      X_ENABLE_PIN
 
 #define Z_STEP_PIN        PA11
 #define Z_DIR_PIN         PA8
