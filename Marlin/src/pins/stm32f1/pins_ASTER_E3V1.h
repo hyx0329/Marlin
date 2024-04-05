@@ -31,6 +31,8 @@
 #define DEFAULT_MACHINE_NAME "ASTER LT1"
 #define BOARD_INFO_NAME      "ASTER_E3V1"
 
+#define BOARD_NO_NATIVE_USB
+
 // Avoid conflict with TIMER_SERVO when using the STM32 HAL
 #define TEMP_TIMER  5
 
@@ -45,7 +47,9 @@
 // (for the printer part, to be specific)
 #if ANY(NO_EEPROM_SELECTED, FLASH_EEPROM_EMULATION)
   #define FLASH_EEPROM_EMULATION
-  #define MARLIN_EEPROM_SIZE              0x1000  // 4K
+  #define EEPROM_PAGE_SIZE     (0x800U) // 2K
+  #define EEPROM_START_ADDRESS (0x8000000UL + (STM32_FLASH_SIZE) * 1024UL - (EEPROM_PAGE_SIZE) * 2UL)
+  #define MARLIN_EEPROM_SIZE (EEPROM_PAGE_SIZE)
 #endif
 
 // L1/LT1 uses 2 different configurations for difference in BLTouch feature
