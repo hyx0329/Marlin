@@ -2732,7 +2732,7 @@
   #define INTERPOLATE      true
 
   #if AXIS_IS_TMC_CONFIG(X)
-    #define X_CURRENT       600        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       670        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for homing. (Typically lower than *_CURRENT.)
     #define X_MICROSTEPS     64        // 0..256
     #define X_RSENSE          0.08     // Multiplied x1000 for TMC26X
@@ -2752,7 +2752,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Y)
-    #define Y_CURRENT       600
+    #define Y_CURRENT       670
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     64
     #define Y_RSENSE          0.08
